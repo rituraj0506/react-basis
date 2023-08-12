@@ -1,0 +1,155 @@
+index .js
+
+ import React from 'react';
+import  ReactDOM  from 'react-dom';
+import App from "./App";
+
+ReactDOM.render(<App/>
+,document.getElementById("root"));
+
+
+App.js
+
+import React from "react";
+import Card from "./Card";
+import Sdata from "./Sdata";
+function App()
+{
+  
+  function ncard(val)
+{
+ return(
+
+  <div className='card1'>
+   <Card
+      tittle={val.tittle}
+      imagescr={val.imagescr}
+      body={val.body}
+     />
+    </div>
+ );
+}
+  return(
+    <>
+      {Sdata.map(ncard)}
+    </>
+  
+    
+  );
+}
+ export default App;
+
+
+Card.jsx
+
+  import React from "react";
+import "./App.css";
+
+function Card({ tittle,imagescr,body})
+{
+return(
+  <>
+  <div className='card-container'>
+    <div className="image-container">
+      <img src={imagescr} alt=''></img>
+    </div>
+
+  <div className='cardcontent'>
+    
+    <div className='cardtittle'>
+     <h3>{tittle}</h3> 
+    </div>
+    <div className='cardbody'>
+      <p>{body}</p>
+    </div>
+  </div>
+    <div className="btn">
+    <button>
+      viewmore
+    </button>
+    </div>
+    
+  </div>
+  </>
+)
+}
+
+export default Card;
+
+
+App.css
+
+  .card-container {
+  margin-top: 50px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0px 0px 7px 3px;
+  transition:0.5s;
+}
+
+.card-container:hover{
+  transform:scale(1.1);
+}
+
+.image-container img{ 
+  height:200px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.cardcontent{
+  margin: 20px;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+
+.main{
+  
+}
+
+.card1{
+  display: flex;
+  flex-basis: 33%;
+}
+
+
+Sdata.jsx
+
+
+  const Sdata = [
+    {
+        tittle:'Card Title',
+        imagescr:"https://walpapercave.com/wp/wp4056410.jpg",
+        body:'this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv',
+    },
+
+    {
+        tittle:'Card Title',
+        imagescr:'https://picsum.photos/id/1/200/300',
+        body:'this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv',
+    },
+
+    {
+        tittle:'Card Title',
+        imagescr:'https://picsum.photos/id/2/200/300',
+        body:'this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv',
+    },
+
+    {
+        tittle:'Card Title',
+        imagescr:'https://picsum.photos/id/3/200/300',
+        body:'this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv',
+    },
+
+    {
+        tittle:'Card Title',
+        imagescr:'https://picsum.photos/id/5/200/300',
+        body:'this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv',
+    },
+];
+
+export default Sdata;
+
