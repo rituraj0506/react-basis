@@ -1,0 +1,177 @@
+index.js
+
+import React from 'react';
+import  ReactDOM  from 'react-dom';
+import App from "./App";
+
+ReactDOM.render(<App/>
+,document.getElementById("root"));
+
+
+App.js
+
+  import React from "react";
+import Card from "./Card";
+function App()
+{
+  return(
+    <div className='main'>
+     <div className='mains'>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+
+     </div><div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+
+     <div className='card1'>
+      <Card
+        tittle='Card Title'
+        imageUrl='https://picsum.photos/200/300'
+        body='this is a dijr rjbfv vv fjnnnnnnnnv vfiooooooooo vfiiiiiiiiiiiiiiiiiii oiiiiiiiiiiiiv vhfffffffffvbbf vfvvnfvnv'
+      />
+     </div>
+     
+     </div>
+    </div>
+    
+  );
+}
+
+ export default App;
+
+Card.jsx
+
+  import React from "react";
+import "./App.css";
+function Card({ tittle,imageUrl,body})
+{
+return(
+  <>
+  <div className='card-container'>
+    <div className="image-container">
+      <img src={imageUrl} alt=''></img>
+    </div>
+
+  <div className='cardcontent'>
+    
+    <div className='cardtittle'>
+     <h3>{tittle}</h3> 
+    </div>
+    <div className='cardbody'>
+      <p>{body}</p>
+    </div>
+  </div>
+    <div className="btn">
+    <button>
+      viewmore
+    </button>
+    </div>
+    
+  </div>
+  </>
+)
+}
+
+export default Card;
+
+
+App.css
+
+  .card-container {
+  margin-top: 50px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0px 0px 7px 3px;
+  transition:0.5s;
+}
+
+.card-container:hover{
+  transform:scale(1.1);
+}
+
+.image-container img{ 
+  height:200px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.cardcontent{
+  margin: 20px;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+
+.main/* uses in mid all image padding both side 65px*/
+{
+margin: auto;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.mains{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  }
+
+  .card1{
+    flex-basis: 23%;
+    margin-bottom: 30px;
+}
+
+  
+
+
