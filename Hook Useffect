@@ -1,0 +1,46 @@
+index.js
+
+import React from 'react';
+import  ReactDOM  from 'react-dom';
+import App from "./App";
+
+ReactDOM.render(<App/>
+,document.getElementById("root"));
+
+
+// increment by 1 after click
+
+export default function App()
+{
+  const [count,setCount] = useState(0);
+  const INcNum = () =>{
+    setCount(count+1);
+  }
+  return(
+    <>
+    <h1>{count}</h1>
+    <button onClick={INcNum}>clickme</button>
+    </>
+  )
+}
+
+
+// after click time refresh to orignal
+
+export default function App()
+{
+  
+  let time= new Date().toLocaleTimeString();
+    const[nowt ,setTime] = useState(time);
+     function Refs()
+     {
+      setTime(time);
+     }
+  return(
+    <>
+    <h1>{nowt}</h1>
+    <button onClick={Refs}>clickme</button>
+    </>
+  )
+}
+
