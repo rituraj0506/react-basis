@@ -1,0 +1,63 @@
+// direct go to main to c
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(
+  <App/>,document.getElementById("root")
+);
+
+
+App.js
+
+import React, { createContext } from 'react';
+import  Compc  from './Compc';
+
+
+const Fname=createContext();
+const Lname=createContext();
+
+  function App()
+ {
+  return(
+    <>
+     <Fname.Provider value={"Vinod"} >
+     <Lname.Provider value={"thapa"} >
+     <Compc/>
+     </Lname.Provider>
+   
+     </Fname.Provider>
+    </>
+   
+  )
+ }
+export{Fname,Lname};
+ export default App;
+
+
+Compc.jsx
+import React from "react";
+import  {Fname,Lname}  from "./App";
+export default function Compc()
+{
+ return(
+    <>
+     <Fname.Consumer>{(fname) =>{
+
+       return(
+        <Lname.Consumer>{(lname) =>{
+           return <h1>Hello This is {fname} {lname}</h1>;
+        }}</Lname.Consumer>
+       )
+       
+     }}</Fname.Consumer>
+ 
+    </>
+   
+ )
+}
+
