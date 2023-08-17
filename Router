@@ -1,0 +1,76 @@
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+  ,document.getElementById("root")
+);
+
+
+App.js
+
+import React from "react";
+import { Routes ,Route } from 'react-router-dom';
+import About from "./About";
+import Contact from "./Contact";
+import Error from "./Error";
+
+export default function App()
+{
+  return (
+    <>
+    <Routes>
+      <Route path="/about" Component={About}/>
+      <Route path="/contact" Component={Contact}/>
+      <Route path="*" Component={Error}/>
+
+    </Routes>
+    
+    </>
+  )
+}
+
+About.js
+
+import React from "react";
+
+export default function About()
+{
+    return(
+        <>
+         <h1>This is About page</h1>
+        </>
+    )
+}
+
+Contact.js
+
+import React from "react";
+export default function Contact()
+{
+    return(
+        <>
+     <h1>This is Contact page</h1>
+        </>
+    )
+}
+
+Error.jsx
+
+import React from "react";
+
+export default function Error()
+{
+    return(
+        <>
+         <h1>Oops page not found</h1>
+        </>
+    )
+}
